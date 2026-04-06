@@ -4,8 +4,6 @@ workflows:
     instance_type: linux_x2
     max_build_duration: 120
     environment:
-      android_signing:
-        - kms_lock_keystore
       vars:
         PACKAGE_NAME: "com.kmslock.app"
         GRADLE_OPTS: "-Xmx3072m -XX:MaxPermSize=512m"
@@ -14,21 +12,14 @@ workflows:
       events:
         - push
         - pull_request
-      branch:
-        include:
-          - main
-          - master
     scripts:
-      - name: Build APK
+      - name: Build Debug APK
         script: |
           cd $FCI_BUILD_DIR
           chmod +x gradlew
-          ./gradlew assembleDebug
-      - name: Generate build report
-        script: |
-          echo "Build completed successfully"
+          ./gradlew assembleDebug --stacktrace
     artifacts:
-      - app/build/outputs/apk/debug/**/*.apk
+      - app/build/outputs/apk/debug/app-debug.apk
     publishing:
       email:
         recipients:
