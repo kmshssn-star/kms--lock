@@ -20,10 +20,3 @@ workflows:
           ./gradlew assembleDebug --stacktrace
     artifacts:
       - app/build/outputs/apk/debug/app-debug.apk
-    publishing:
-      email:
-        recipients:
-          - $PERSONAL_EMAIL
-        notify:
-          success: true
-          failure: true
