@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="KMS Lock"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Device Lock Manager"
+        android:textSize="14sp"
+        android:textColor="@color/gray"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Admin Status -->
+    <TextView
+        android:id="@+id/admin_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="✗ Device Admin Disabled"
+        android:textSize="14sp"
+        android:textColor="@color/red"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:background="@drawable/status_background" />
+
+    <!-- Enable Admin Button -->
+    <Button
+        android:id="@+id/enable_admin_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enable Device Admin"
+        android:textSize="16sp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/teal" />
+
+    <!-- Duration Selection -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Duration"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp"
+        android:spacing="8dp">
+
+        <Button
+            android:id="@+id/duration_5min"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="5m"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/duration_10min"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="10m"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/duration_30min"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="30m"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/duration_1hour"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1h"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <!-- Whitelist Apps -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Whitelist Apps (Select to Allow)"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="12dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/app_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Start Lock Button -->
+    <Button
+        android:id="@+id/start_lock_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="START LOCK"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/red"
+        android:textColor="@color/white" />
+
+</LinearLayout>
