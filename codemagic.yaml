@@ -1,12 +1,12 @@
 workflows:
   android-workflow:
     name: Android Workflow
-    instance_type: linux_x2
+    instance_type: linux
     max_build_duration: 120
     environment:
       vars:
         PACKAGE_NAME: "com.kmslock.app"
-        GRADLE_OPTS: "-Xmx3072m -XX:MaxPermSize=512m"
+        GRADLE_OPTS: "-Xmx2048m"
       java: 11
     triggering:
       events:
